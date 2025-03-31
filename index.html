@@ -19,6 +19,57 @@
       background-color: #f5f5f5;
       position: relative;
     }
+
+
+
+
+
+
+
+
+
+
+#loading-screen {
+    position: fixed; /* يجعلها منفصلة عن body */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* تأكد أنها تغطي كل شيء */
+}
+
+/* دائرة التحميل */
+.loader {
+    width: 15px;
+    height: 15px;
+    border: 5px solid #000;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* دوران الدائرة */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* الصفحة الرئيسية بدون تأثير */
+#main-content {
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+
+    
+
+    
     .container {
       text-align: center;
       width: 90%;
@@ -122,6 +173,21 @@
   </style>
 </head>
 <body>
+
+
+
+
+
+
+
+<!-- صفحة التحميل (منفصلة عن body) -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- المحتوى الرئيسي الذي يظهر بعد انتهاء التحميل -->
+
+
   
   <div class="container"><BR>
     <div class="title">Wallet Search</div>
@@ -233,7 +299,15 @@
     
     
   
-  
+   <script>
+  // تأخير 3 ثوانٍ قبل إزالة صفحة التحميل
+window.onload = function() {
+    setTimeout(function() {
+        document.getElementById('loading-screen').remove(); // إزالة صفحة التحميل نهائياً
+    }, 1000); // 3 ثوانٍ
+};
+      
+      </script>
   <script>
     let running = false;
 let checked = 0;
