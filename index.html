@@ -1,257 +1,103 @@
- <!-- no codes -->  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap" rel="stylesheet">
-    <title>home</title>
-    
-  
-      
-  
-  
-  
-  
-  
-  
-  
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Russo+One&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <title>UUZSearch</title>
   <style>
-       
-
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: "Roboto", serif;
-            background-color: #f2f2f2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 0 20px;
-          
-        }
- /* تصميم صفحة التحميل */
-#loading-screen {
-    position: fixed; /* يجعلها منفصلة عن body */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* تأكد أنها تغطي كل شيء */
-}
-
-/* دائرة التحميل */
-.loader {
-    width: 15px;
-    height: 15px;
-    border: 5px solid #000;
-    border-top: 5px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-/* دوران الدائرة */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* الصفحة الرئيسية بدون تأثير */
-#main-content {
-    text-align: center;
-    padding: 20px;
-}
+    body {
+      font-family: "Schibsted Grotesk", sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+      position: relative;
+    }
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 450px;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      position: absolute;
+      left: 20px; /* تحريك النص إلى اليسار */
+      top: 30px;
+    }
+    .box {
+      height: 411px; /* تم زيادة الارتفاع إلى 500px */
+      overflow: hidden;
+      background-color: #fff;
+      border-radius: 14px;
+      top: -77px;
+      padding: 12px;
+      margin-bottom: -66px; /* تقليل المسافة بين المربع والمستطيل السفلي */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      position: relative;
+      font-size: 15.9px;
+      color: #696969;
+      
+    }
+    .message {
+      font-size: 6px;
+      line-height: -4;
+      
+      
+      white-space: nowrap;
+      animation: scrollText 5s linear infinite;
+    }
+    .stats-box {
+      background-color: #fff;
+      padding: 16px;
+      
+      border-radius: 14px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 32px;
+      text-align: left;
+      font-size: 16px;
+      font-weight: ;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      border-radius: 11px;
+    }
+    #stop {
+      background-color: #d3d3d3;
+      color: #000;
+    }
+    #start {
+      background-color: #000;
+      color: #fff;
+    }
+    @keyframes scrollText {
+      0% {
+        top: 100%;
+      }
+      100% {
+        top: -190%;
+      }
+    }
     
-        .container {
-            width: 100%;
-            max-width: 500px;
-            margin-top: 5px;
-        }
-
-        .crypto-box {
-            background-color: white;
-            border-radius: 19px;
-            padding: 13px;
-            margin-bottom: 7px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            height: 60px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-            transition: background-color 0.3s;
-        }
-
-        .crypto-box:hover {
-            background-color: #f7f7f7;
-        }
-
-        .crypto-box img {
-            width: 35px;
-            height: 35px;
-            margin-right: 15px;
-        }
-
-        .crypto-box .cu1rrency-name {
-            font-size: 18px;
-            font-weight: bold;
-            color: black;
-            margin-right: 5px;
-        }
-
-        .crypto-box .cu1rrency-symbol {
-            font-size: 15px;
-            color: gray;
-        }
-
-        .crypto-radio {
-            display: none;
-        }
-
-        /* الدائرة الافتراضية */
-        .checkbox-label {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            border: 2px solid #ccc;
-            display: inline-block;
-            background-color: white;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
-        }
-
-        /* عند النقر تظهر الصورة مكان الدائرة */
-        .crypto-radio:checked + .checkbox-label {
-            background: url('https://i.postimg.cc/fT4m9KYZ/Picsart-25-03-16-01-56-49-834.jpg') no-repeat center center;
-            background-size: cover;
-            border: none;
-        }
-
-        .coming-blockchains {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            margin-top: 25px;
-            margin-left: 4px;
-            text-align: left;
-        }
-
-        .blockchain-box {
-            background-color: white;
-            padding: 13px;
-            margin: 10px 0;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            box-shadow: none;
-            opacity: 0.7;
-        }
-
-        .blockchain-box img {
-            width: 30px;
-            height: 30px;
-            margin-right: 15px;
-        }
-
-        .blockchain-box .cu1rrency-name {
-            font-size: 16px;
-            font-weight: bold;
-            color: black;
-            margin-right: 5px;
-        }
-
-        .blockchain-box .cu1rrency-symbol {
-            font-size: 15px;
-            color: gray;
-        }
-
-        .continue-btn {
-            background-color: #000;
-            
-            color: white;
-            padding: 17px;
-            width: 100%;
-            border-radius: 15px;
-            border: none;
-            margin-top: 15px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .continue-btn:hover {
-            background-color: #333;
-        }
-
-        .footer {
+    
+    
+    .footer {
             position: fixed;
             bottom: 0;
             left: 0;
@@ -268,135 +114,263 @@
             height: 40px;
             cursor: pointer;
         }
-    </style>
-<link rel="me" href="https://www.blogger.com/profile/01193733866662496333" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+    
+    
+    
+    
+    
+  </style>
 </head>
 <body>
-  <!-- صفحة التحميل (منفصلة عن body) -->
-    <div id="loading-screen">
-        <div class="loader"></div>
+  
+  <div class="container"><BR>
+    <div class="title">Wallet Search</div>
+    <div class="box" id="output">
+      
     </div>
-
-    <!-- المحتوى الرئيسي الذي يظهر بعد انتهاء التحميل -->
-
-
-
-    <div class="container">
-      <div class="coming-blockchains">
-            Select Blockchain
-        </div>
-      <br>
-         <!-- مستطيلات اختيار -->
-        <div class="crypto-box">
-            <div style="display: flex; align-items: center;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin" />
-                <span class="cu1rrency-name">Bitcoin</span>
-                <span class="cu1rrency-symbol">BTC</span>
-            </div>
-            <input type="checkbox" name="crypto" id="btc" class="crypto-radio" checked>
-             <label for="btc" class="checkbox-label"></label>
-        </div>
-
-        <div class="crypto-box">
-            <div style="display: flex; align-items: center;">
-                <img src="https://i.postimg.cc/52FY8Ym5/eth.png" alt="Ethereum" />
-                <span class="cu1rrency-name">Ethereum</span>
-                <span class="cu1rrency-symbol">ETH</span>
-            </div>
-            <input type="checkbox" name="crypto" id="eth" class="crypto-radio">
-           <label for="eth" class="checkbox-label"></label>
-        </div>
-
-        <div class="crypto-box">
-            <div style="display: flex; align-items: center;">
-                <img src="https://i.postimg.cc/W1DrSfsk/Binance-Coin-BNB.png" alt="Binance Coin" />
-                <span class="cu1rrency-name">Binance Coin</span>
-                <span class="cu1rrency-symbol">BNB</span>
-            </div>
-            <input type="checkbox" name="crypto" id="bnb" class="crypto-radio">
-           <label for="bnb" class="checkbox-label"></label>
-        </div>
-
-        <div class="crypto-box">
-            <div style="display: flex; align-items: center;">
-                <img src="https://i.postimg.cc/KjrQGp1z/usdt.png" alt="Tether" />
-                <span class="cu1rrency-name">Tether</span>
-                <span class="cu1rrency-symbol">USDT</span>
-            </div>
-            <input type="checkbox" name="crypto" id="usdt" class="crypto-radio">
-            <label for="usdt" class="checkbox-label"></label>
-        </div>
-
-        <div class="crypto-box">
-            <div style="display: flex; align-items: center;">
-                <img src="https://i.postimg.cc/WpWhK6W6/Solana-logo.png" alt="Solana" />
-                <span class="cu1rrency-name">Solana</span>
-                <span class="cu1rrency-symbol">SOL</span>
-            </div>
-            <input type="checkbox" name="crypto" id="sol" class="crypto-radio">
-           <!--<label for="sol" class="checkbox-label"></label>-->
-        </div>
-
-        <div class="crypto-box">
-            <div style="display: flex; align-items: center;">
-                <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt="Litecoin" />
-                <span class="cu1rrency-name">Litecoin</span>
-                <span class="cu1rrency-symbol">LTC</span>
-            </div>
-            <input type="checkbox" name="crypto" id="ltc" class="crypto-radio">
-         <!-- <label for="ltc" class="checkbox-label"></label>-->
-        </div>
-
-        <!-- نص "ComingBlockch" -->
-        <div class="coming-blockchains">
-            Coming Blockchains
-        </div>
-
-        <!-- مستطيلاتللاختيار -->
-        <div class="blockchain-box">
-            <img src="https://i.postimg.cc/T3k75sC5/62837c68ab0e763d5f77e9a6.png" alt="Tron TRX">
-            <span class="cu1rrency-name">Tron</span>
-            <span class="cu1rrency-symbol"> TRX</span>
-        </div>
-        <div class="blockchain-box">
-            <img src="https://i.postimg.cc/6pRq8s9Y/30753617.png" alt="Polygon Matic">
-            <span class="cu1rrency-name">Polygon</span>
-            <span class="cu1rrency-symbol"> Matic</span>
-        </div>
-      <!-- <div class="blockchain-box">
-            <img src="https://i.postimg.cc/rmhFBMJF/avalanche-avax-logo.png" alt="Avalanche AVAX">
-            <span class="cu1rrency-name">Avalanche</span>
-            <span class="cu1rrency-symbol">AVAX</span>
-        </div>-->
-
-        <!-- زر Continue -->
-        <button class="continue-btn" onclick="continueAction()">Continue</button>
+    <div class="stats-box">
+      <h style="font-size: 14.5px; color: #696969;">Wallets checked: <span id="checked">0</span></h><br>
+      <h style="font-size: 20px; font-weight: bold;">Found: $<span id="found">0.00</span></h>
     </div>
+    <BR><BR>
+    <div class="buttons">
+      <button id="stop">STOP</button>
+      <button id="start">START</button>
+    </div>
+  
 
-    <!-- شريط الأيقونات في الأسفل -->
+  
+  
+  
+  
+  
+   <!-- شريط الأيقونات في الأسفل -->
     <div class="footer">
         <div class="footer-icon">
-            <a href="#link1"><img src="https://i.postimg.cc/0jvVD1mx/Picsart-24-12-09-17-44-00-934.jpg" alt="Icon 1"></a>
+            <a href="#link1"><img src="https://i.postimg.cc/c1jvqk13/Picsart-24-12-09-17-44-00-934.webp" alt="Icon 1"></a>
         </div>
         <div class="footer-icon">
-            <a href="#link2"><img src="https://i.postimg.cc/MZ14TdRq/statestice.jpg" alt="Icon 2"></a>
+            <a href="#link2"><img src="https://i.postimg.cc/fknWVFkg/statestice-1.webp" alt="Icon 2"></a>
         </div>
         <div class="footer-icon">
-            <a href="#link3"><img src="https://i.postimg.cc/Zn61zLPY/setenge.jpg" alt="Icon 3"></a>
+            <a href="#link3"><img src="https://i.postimg.cc/15hNnYxQ/setenge-1.webp" alt="Icon 3"></a>
         </div>
         <div class="footer-icon">
-            <a href="#link4"><img src="https://i.postimg.cc/9QggSS3t/sepport.jpg" alt="Icon 4"></a>
+            <a href="#link4"><img src="https://i.postimg.cc/KjX4T4HN/sepport-2.webp" alt="Icon 4"></a>
         </div>
     </div>
+  
+    
+    
+  <!--
 
+
+
+
+</body>
+</html>
+
+ -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+  <script>
+    let running = false;
+let checked = 0;
+let totalFound = 0;
+
+const messages = [
+  
+  
+  
+"balance:0 | Wallet check:sow bul weed t...", 
+"balance:0 | Wallet check:go zoom big top...", 
+"balance:0 | Wallet check:bin pot bag hut...", 
+"balance:0 | Wallet check:map dip pen big...", 
+"balance:0 | Wallet check:cat rat top dip...", 
+"balance:0 | Wallet check:bag pot sun box...", 
+"balance:0 | Wallet check:fun top bag hit...", 
+"balance:0 | Wallet check:fig top pot bug...", 
+"balance:0 | Wallet check:pen cup sun set...", 
+"balance:0 | Wallet check:hot bin pot bat...", 
+"balance:0 | Wallet check:big sun top cap...", 
+"balance:0 | Wallet check:box hop wet bin...", 
+"balance:0 | Wallet check:man fat pen pot...", 
+"balance:0 | Wallet check:sun cap pot big...", 
+"balance:0 | Wallet check:rat bin big top...", 
+"balance:0 | Wallet check:fig pan pot hot...", 
+"balance:0 | Wallet check:map big hut sun...", 
+"balance:0 | Wallet check:bat dip cup top...", 
+"balance:0 | Wallet check:pin top mug bug...", 
+"balance:0 | Wallet check:big rat pen pot...", 
+"balance:0 | Wallet check:bin pan sun cap...", 
+"balance:0 | Wallet check:fig sun pot map...", 
+"balance:0 | Wallet check:box top fat rat...", 
+"balance:0 | Wallet check:cap pot big wet...", 
+"balance:0 | Wallet check:hot box sun rat...", 
+"balance:0 | Wallet check:pen pot big sun...", 
+"balance:0 | Wallet check:bag fun dip hut...", 
+"balance:0 | Wallet check:map bin fat cup...", 
+"balance:0 | Wallet check:fig bag hot top...", 
+"balance:0 | Wallet check:bat pot map dip...", 
+"balance:0 | Wallet check:zoom fast jump ki...", 
+"balance:0 | Wallet check:pen top blue cap...", 
+"balance:0 | Wallet check:spin boot jump ri...", 
+"balance:0 | Wallet check:clip ring pen bat...", 
+"balance:0 | Wallet check:dark spin door to...", 
+"balance:0 | Wallet check:peak jump ring cu...", 
+"balance:0 | Wallet check:tool sink map top...", 
+"balance:0 | Wallet check:fast bolt win nut...", 
+"balance:0 | Wallet check:sun ring dip bag...", 
+"balance:0 | Wallet check:cot pop mug dog...", 
+"balance:0 | Wallet check:roll pin top jar...", 
+"balance:0 | Wallet check:park step boot g...", 
+"balance:0 | Wallet check:sand pull win top...", 
+"balance:0 | Wallet check:coin top cap jum...", 
+"balance:0 | Wallet check:flip boot pan jar...", 
+"balance:0 | Wallet check:spin bet top mug...", 
+"balance:0 | Wallet check:pick bag win cup...", 
+"balance:0 | Wallet check:dark top jar win...", 
+"balance:0 | Wallet check:grip pin map sun...", 
+"balance:0 | Wallet check:mix bot cap sun...", 
+"balance:0 | Wallet check:wave sand top ...", 
+"balance:0 | Wallet check:hill moon pit win...", 
+"balance:0 | Wallet check:brick map spin p...", 
+"balance:0 | Wallet check:gold lamp pen top...", 
+"balance:0 | Wallet check:sink top pen bat...", 
+"balance:0 | Wallet check:sun top win pin...", 
+"balance:0 | Wallet check:slip sun mug cap...", 
+"balance:0 | Wallet check:brim top sun mug...", 
+"balance:0 | Wallet check:clip pen win jar...", 
+"balance:0 | Wallet check:flag pin cap top...", 
+"balance:0 | Wallet check:mock pen win nut...", 
+"balance:0 | Wallet check:step rim mug pan...", 
+"balance:0 | Wallet check:pick cap jar mug...", 
+"balance:0 | Wallet check:rim sun bag top...", 
+"balance:0 | Wallet check:map top win hut...", 
+"balance:0 | Wallet check:flip cap mug dog...", 
+"balance:0 | Wallet check:lock spin pan tp...", 
+"balance:0 | Wallet check:turn ring pen bat...", 
+"balance:0 | Wallet check:trap pen cup bag...", 
+"balance:0 | Wallet check:dot pin top sun...", 
+"balance:0 | Wallet check:flip map win cap...", 
+"balance:0 | Wallet check:sharp pin top ba...", 
+"balance:0 | Wallet check:sun pan win jar...", 
+"balance:0 | Wallet check:sand spin pin p...", 
+"balance:0 | Wallet check:trap pan bag top...", 
+"balance:0 | Wallet check:pull cap map jar...", 
+"balance:0 | Wallet check:ramp top cap pen...", 
+"balance:0 | Wallet check:turn top pen jar...", 
+"balance:0 | Wallet check:bolt map sun cup...", 
+"balance:0 | Wallet check:lamp pin cap win...", 
+"balance:0 | Wallet check:step rim pin mug...", 
+"balance:0 | Wallet check:roll pen top bag...", 
+"balance:0 | Wallet check:clap win map top...", 
+"balance:0 | Wallet check:wind cap jump ...", 
+"balance:0 | Wallet check:flip bag top sun...", 
+"balance:0 | Wallet check:pan sun win cap...", 
+"balance:0 | Wallet check:spin map top jar...", 
+"balance:0 | Wallet check:ramp map bag ...", 
+"balance:0 | Wallet check:trap cap sun y..."
+  
+  
+];
+
+function addMessage() {
+  if (!running) return;
+
+  // اختيار رسالة عشوائية
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+  const div = document.createElement('div');
+  div.textContent = randomMessage;
+  document.getElementById('output').appendChild(div);
+  document.getElementById('output').scrollTop = document.getElementById('output').scrollHeight;
+
+  // تحديث عدد المحافظ
+  checked++;
+  document.getElementById('checked').textContent = checked;
+
+  // استخراج القيمة من الرسالة وإضافتها إلى الرصيد
+  const match = randomMessage.match(/\$([0-9]+(?:\.[0-9]{1,2})?)/);
+  if (match) {
+    const amount = parseFloat(match[1]);
+    totalFound += amount;
+    document.getElementById('found').textContent = totalFound.toFixed(2);
+  }
+
+  setTimeout(addMessage, 32); // إضافة الرسائل بشكل أسرع (كل 100 ملي ثانية)
+}
+
+document.getElementById('start').onclick = function() {
+  running = true;
+  addMessage();
+};
+
+document.getElementById('stop').onclick = function() {
+  running = false;
+};
+  </script>
     <script>
-        function continueAction() {
-            window.location.href = "https://your-link.com";
-        }
-    </script>
-   <script>
     document.addEventListener("DOMContentLoaded", function () {
         const lazyImages = document.querySelectorAll("img[data-src]");
         const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -424,7 +398,7 @@
 
     document.addEventListener('copy', function(e) {
         e.preventDefault();
-        alert('عذراً، النسخ غير مسموح!');
+        alert('');
     });
 </script>
   
@@ -452,16 +426,5 @@ window.history.replaceState({}, document.title, clean_uri);
 }
 //]]>
 </script>
-   
-    <script>
-  // تأخير 3 ثوانٍ قبل إزالة صفحة التحميل
-window.onload = function() {
-    setTimeout(function() {
-        document.getElementById('loading-screen').remove(); // إزالة صفحة التحميل نهائياً
-    }, 1000); // 3 ثوانٍ
-};
-      
-      </script>
-
 </body>
 </html>
