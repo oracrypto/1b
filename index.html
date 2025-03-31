@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Russo+One&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Thai:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  
   <title>UUZSearch</title>
   <style>
     body {
@@ -16,19 +19,15 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #f5f5f5;
+      background-color: #eff0f3;
       position: relative;
     }
-
-
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+     /* تصميم صفحة التحميل */
 #loading-screen {
     position: fixed; /* يجعلها منفصلة عن body */
     top: 0;
@@ -44,12 +43,12 @@
 
 /* دائرة التحميل */
 .loader {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     border: 5px solid #000;
     border-top: 5px solid transparent;
     border-radius: 50%;
-    animation: spin 1s linear infinite;
+    animation: spin 1.3s linear infinite;
 }
 
 /* دوران الدائرة */
@@ -63,12 +62,12 @@
     text-align: center;
     padding: 20px;
 }
-
-
-
-
     
-
+    
+    
+    
+    
+    
     
     .container {
       text-align: center;
@@ -76,7 +75,8 @@
       max-width: 450px;
     }
     .title {
-      font-size: 24px;
+       font-family: "Figtree", sans-serif;
+      font-size: 25px;
       font-weight: bold;
       position: absolute;
       left: 20px; /* تحريك النص إلى اليسار */
@@ -93,7 +93,7 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       text-align: left;
       position: relative;
-      font-size: 15.9px;
+      font-size: 15.3px;
       color: #696969;
       
     }
@@ -105,32 +105,38 @@
       white-space: nowrap;
       animation: scrollText 5s linear infinite;
     }
+    
     .stats-box {
+      font-family: "Inter", sans-serif;
       background-color: #fff;
-      padding: 16px;
+      padding: 15px;
       
       border-radius: 14px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       margin-bottom: 32px;
       text-align: left;
-      font-size: 16px;
+      font-size: 786;
       font-weight: ;
     }
     .buttons {
       display: flex;
       justify-content: space-between;
       gap: 16px;
+      
     }
     button {
+      font-family: "Poppins", sans-serif;
       width: 100%;
+      
       padding: 14px;
       font-size: 18px;
+      font-weight: 18px;
       border: none;
       cursor: pointer;
-      border-radius: 11px;
+      border-radius: 13px;
     }
     #stop {
-      background-color: #d3d3d3;
+      background-color: #e4e7f3;
       color: #000;
     }
     #start {
@@ -173,30 +179,27 @@
   </style>
 </head>
 <body>
-
-
-
-
-
-
-
-<!-- صفحة التحميل (منفصلة عن body) -->
+    <!-- downlading -->
     <div id="loading-screen">
         <div class="loader"></div>
     </div>
-
-    <!-- المحتوى الرئيسي الذي يظهر بعد انتهاء التحميل -->
-
-
+    <!-- downloding -->
+  
+  
+  
+  
+  
+  
+  
   
   <div class="container"><BR>
-    <div class="title">Wallet Search</div>
+    <div class="title">Wallet search</div><BR><BR><BR>
     <div class="box" id="output">
       
     </div>
     <div class="stats-box">
       <h style="font-size: 14.5px; color: #696969;">Wallets checked: <span id="checked">0</span></h><br>
-      <h style="font-size: 20px; font-weight: bold;">Found: $<span id="found">0.00</span></h>
+      <h style="font-size: 20px; font-weight: 670;">Found: $<span id="found">0.00</span></h>
     </div>
     <BR><BR>
     <div class="buttons">
@@ -213,7 +216,7 @@
    <!-- شريط الأيقونات في الأسفل -->
     <div class="footer">
         <div class="footer-icon">
-            <a href="#link1"><img src="https://i.postimg.cc/c1jvqk13/Picsart-24-12-09-17-44-00-934.webp" alt="Icon 1"></a>
+            <a href="#search"><img src="https://i.postimg.cc/c1jvqk13/Picsart-24-12-09-17-44-00-934.webp" alt="Icon 1"></a>
         </div>
         <div class="footer-icon">
             <a href="#link2"><img src="https://i.postimg.cc/fknWVFkg/statestice-1.webp" alt="Icon 2"></a>
@@ -297,17 +300,17 @@
     
     
     
-    
+     <script>
   
-   <script>
-  // تأخير 3 ثوانٍ قبل إزالة صفحة التحميل
 window.onload = function() {
     setTimeout(function() {
-        document.getElementById('loading-screen').remove(); // إزالة صفحة التحميل نهائياً
-    }, 1000); // 3 ثوانٍ
+        document.getElementById('loading-screen').remove(); 
+    }, 1360); // 3 ثوانٍ
 };
       
-      </script>
+    </script>
+  
+  
   <script>
     let running = false;
 let checked = 0;
@@ -317,95 +320,95 @@ const messages = [
   
   
   
-"balance:0 | Wallet check:sow bul weed t...", 
-"balance:0 | Wallet check:go zoom big top...", 
-"balance:0 | Wallet check:bin pot bag hut...", 
-"balance:0 | Wallet check:map dip pen big...", 
-"balance:0 | Wallet check:cat rat top dip...", 
-"balance:0 | Wallet check:bag pot sun box...", 
-"balance:0 | Wallet check:fun top bag hit...", 
-"balance:0 | Wallet check:fig top pot bug...", 
-"balance:0 | Wallet check:pen cup sun set...", 
-"balance:0 | Wallet check:hot bin pot bat...", 
-"balance:0 | Wallet check:big sun top cap...", 
-"balance:0 | Wallet check:box hop wet bin...", 
-"balance:0 | Wallet check:man fat pen pot...", 
-"balance:0 | Wallet check:sun cap pot big...", 
-"balance:0 | Wallet check:rat bin big top...", 
-"balance:0 | Wallet check:fig pan pot hot...", 
-"balance:0 | Wallet check:map big hut sun...", 
-"balance:0 | Wallet check:bat dip cup top...", 
-"balance:0 | Wallet check:pin top mug bug...", 
-"balance:0 | Wallet check:big rat pen pot...", 
-"balance:0 | Wallet check:bin pan sun cap...", 
-"balance:0 | Wallet check:fig sun pot map...", 
-"balance:0 | Wallet check:box top fat rat...", 
-"balance:0 | Wallet check:cap pot big wet...", 
-"balance:0 | Wallet check:hot box sun rat...", 
-"balance:0 | Wallet check:pen pot big sun...", 
-"balance:0 | Wallet check:bag fun dip hut...", 
-"balance:0 | Wallet check:map bin fat cup...", 
-"balance:0 | Wallet check:fig bag hot top...", 
-"balance:0 | Wallet check:bat pot map dip...", 
-"balance:0 | Wallet check:zoom fast jump ki...", 
-"balance:0 | Wallet check:pen top blue cap...", 
-"balance:0 | Wallet check:spin boot jump ri...", 
-"balance:0 | Wallet check:clip ring pen bat...", 
-"balance:0 | Wallet check:dark spin door to...", 
-"balance:0 | Wallet check:peak jump ring cu...", 
-"balance:0 | Wallet check:tool sink map top...", 
-"balance:0 | Wallet check:fast bolt win nut...", 
-"balance:0 | Wallet check:sun ring dip bag...", 
-"balance:0 | Wallet check:cot pop mug dog...", 
-"balance:0 | Wallet check:roll pin top jar...", 
-"balance:0 | Wallet check:park step boot g...", 
-"balance:0 | Wallet check:sand pull win top...", 
-"balance:0 | Wallet check:coin top cap jum...", 
-"balance:0 | Wallet check:flip boot pan jar...", 
-"balance:0 | Wallet check:spin bet top mug...", 
-"balance:0 | Wallet check:pick bag win cup...", 
-"balance:0 | Wallet check:dark top jar win...", 
-"balance:0 | Wallet check:grip pin map sun...", 
-"balance:0 | Wallet check:mix bot cap sun...", 
-"balance:0 | Wallet check:wave sand top ...", 
-"balance:0 | Wallet check:hill moon pit win...", 
-"balance:0 | Wallet check:brick map spin p...", 
-"balance:0 | Wallet check:gold lamp pen top...", 
-"balance:0 | Wallet check:sink top pen bat...", 
-"balance:0 | Wallet check:sun top win pin...", 
-"balance:0 | Wallet check:slip sun mug cap...", 
-"balance:0 | Wallet check:brim top sun mug...", 
-"balance:0 | Wallet check:clip pen win jar...", 
-"balance:0 | Wallet check:flag pin cap top...", 
-"balance:0 | Wallet check:mock pen win nut...", 
-"balance:0 | Wallet check:step rim mug pan...", 
-"balance:0 | Wallet check:pick cap jar mug...", 
-"balance:0 | Wallet check:rim sun bag top...", 
-"balance:0 | Wallet check:map top win hut...", 
-"balance:0 | Wallet check:flip cap mug dog...", 
-"balance:0 | Wallet check:lock spin pan tp...", 
-"balance:0 | Wallet check:turn ring pen bat...", 
-"balance:0 | Wallet check:trap pen cup bag...", 
-"balance:0 | Wallet check:dot pin top sun...", 
-"balance:0 | Wallet check:flip map win cap...", 
-"balance:0 | Wallet check:sharp pin top ba...", 
-"balance:0 | Wallet check:sun pan win jar...", 
-"balance:0 | Wallet check:sand spin pin p...", 
-"balance:0 | Wallet check:trap pan bag top...", 
-"balance:0 | Wallet check:pull cap map jar...", 
-"balance:0 | Wallet check:ramp top cap pen...", 
-"balance:0 | Wallet check:turn top pen jar...", 
-"balance:0 | Wallet check:bolt map sun cup...", 
-"balance:0 | Wallet check:lamp pin cap win...", 
-"balance:0 | Wallet check:step rim pin mug...", 
-"balance:0 | Wallet check:roll pen top bag...", 
-"balance:0 | Wallet check:clap win map top...", 
-"balance:0 | Wallet check:wind cap jump ...", 
-"balance:0 | Wallet check:flip bag top sun...", 
-"balance:0 | Wallet check:pan sun win cap...", 
-"balance:0 | Wallet check:spin map top jar...", 
-"balance:0 | Wallet check:ramp map bag ...", 
-"balance:0 | Wallet check:trap cap sun y..."
+"Balance: 0 | Wallet check:sow bul weed t...", 
+"Balance: 0 | Wallet check:go zoom big top...", 
+"Balance: 0 | Wallet check:bin pot bag hut...", 
+"Balance: 0 | Wallet check:map dip pen big...", 
+"Balance: 0 | Wallet check:cat rat top dip...", 
+"Balance: 0 | Wallet check:bag pot sun box...", 
+"Balance: 0 | Wallet check:fun top bag hit...", 
+"Balance: 0 | Wallet check:fig top pot bug...", 
+"Balance: 0 | Wallet check:pen cup sun set...", 
+"Balance: 0 | Wallet check:hot bin pot bat...", 
+"Balance: 0 | Wallet check:big sun top cap...", 
+"Balance: 0 | Wallet check:box hop wet bin...", 
+"Balance: 0 | Wallet check:man fat pen pot...", 
+"Balance: 0 | Wallet check:sun cap pot big...", 
+"Balance: 0 | Wallet check:rat bin big top...", 
+"Balance: 0 | Wallet check:fig pan pot hot...", 
+"Balance: 0 | Wallet check:map big hut sun...", 
+"Balance: 0 | Wallet check:bat dip cup top...", 
+"Balance: 0 | Wallet check:pin top mug bug...", 
+"Balance: 0 | Wallet check:big rat pen pot...", 
+"Balance: 0 | Wallet check:bin pan sun cap...", 
+"Balance: 0 | Wallet check:fig sun pot map...", 
+"Balance: 0 | Wallet check:box top fat rat...", 
+"Balance: 0 | Wallet check:cap pot big wet...", 
+"Balance: 0 | Wallet check:hot box sun rat...", 
+"Balance: 0 | Wallet check:pen pot big sun...", 
+"Balance: 0 | Wallet check:bag fun dip hut...", 
+"Balance: 0 | Wallet check:map bin fat cup...", 
+"Balance: 0 | Wallet check:fig bag hot top...", 
+"Balance: 0 | Wallet check:bat pot map dip...", 
+"Balance: 0 | Wallet check:zoom fast jump ki...", 
+"Balance: 0 | Wallet check:pen top blue cap...", 
+"Balance: 0 | Wallet check:spin boot jump ri...", 
+"Balance: 0 | Wallet check:clip ring pen bat...", 
+"Balance: 0 | Wallet check:dark spin door to...", 
+"Balance: 0 | Wallet check:peak jump ring cu...", 
+"Balance: 0 | Wallet check:tool sink map top...", 
+"Balance: 0 | Wallet check:fast bolt win nut...", 
+"Balance: 0 | Wallet check:sun ring dip bag...", 
+"Balance: 0 | Wallet check:cot pop mug dog...", 
+"Balance: 0 | Wallet check:roll pin top jar...", 
+"Balance: 0 | Wallet check:park step boot g...", 
+"Balance: 0 | Wallet check:sand pull win top...", 
+"Balance: 0 | Wallet check:coin top cap jum...", 
+"Balance: 0 | Wallet check:flip boot pan jar...", 
+"Balance: 0 | Wallet check:spin bet top mug...", 
+"Balance: 0 | Wallet check:pick bag win cup...", 
+"Balance: 0 | Wallet check:dark top jar win...", 
+"Balance: 0 | Wallet check:grip pin map sun...", 
+"Balance: 0 | Wallet check:mix bot cap sun...", 
+"Balance: 0 | Wallet check:wave sand top ...", 
+"Balance: 0 | Wallet check:hill moon pit win...", 
+"Balance: 0 | Wallet check:brick map spin p...", 
+"Balance: 0 | Wallet check:gold lamp pen top...", 
+"Balance: 0 | Wallet check:sink top pen bat...", 
+"Balance: 0 | Wallet check:sun top win pin...", 
+"Balance: 0 | Wallet check:slip sun mug cap...", 
+"Balance: 0 | Wallet check:brim top sun mug...", 
+"Balance: 0 | Wallet check:clip pen win jar...", 
+"Balance: 0 | Wallet check:flag pin cap top...", 
+"Balance: 0 | Wallet check:mock pen win nut...", 
+"Balance: 0 | Wallet check:step rim mug pan...", 
+"Balance: 0 | Wallet check:pick cap jar mug...", 
+"Balance: 0 | Wallet check:rim sun bag top...", 
+"Balance: 0 | Wallet check:map top win hut...", 
+"Balance: 0 | Wallet check:flip cap mug dog...", 
+"Balance: 0 | Wallet check:lock spin pan tp...", 
+"Balance: 0 | Wallet check:turn ring pen bat...", 
+"Balance: 0 | Wallet check:trap pen cup bag...", 
+"Balance: 0 | Wallet check:dot pin top sun...", 
+"Balance: 0 | Wallet check:flip map win cap...", 
+"Balance: 0 | Wallet check:sharp pin top ba...", 
+"Balance: 0 | Wallet check:sun pan win jar...", 
+"Balance: 0 | Wallet check:sand spin pin p...", 
+"Balance: 0 | Wallet check:trap pan bag top...", 
+"Balance: 0 | Wallet check:pull cap map jar...", 
+"Balance: 0 | Wallet check:ramp top cap pen...", 
+"Balance: 0 | Wallet check:turn top pen jar...", 
+"Balance: 0 | Wallet check:bolt map sun cup...", 
+"Balance: 0 | Wallet check:lamp pin cap win...", 
+"Balance: 0 | Wallet check:step rim pin mug...", 
+"Balance: 0 | Wallet check:roll pen top bag...", 
+"Balance: 0 | Wallet check:clap win map top...", 
+"Balance: 0 | Wallet check:wind cap jump yu...", 
+"Balance: 0 | Wallet check:flip bag top sun...", 
+"Balance: 0 | Wallet check:pan sun win cap...", 
+"Balance: 0 | Wallet check:spin map top jar...", 
+"Balance: 0 | Wallet check:ramp map bag gh...", 
+"Balance: 0 | Wallet check:trap cap sun ye..."
   
   
 ];
